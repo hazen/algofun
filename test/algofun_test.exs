@@ -1,6 +1,6 @@
 defmodule AlgofunTest do
   use ExUnit.Case
-  alias Algofun.{MergeSort, QuickSort}
+  alias Algofun.{MergeSort, QuickSort, InsertionSort, HeapSort}
 
   setup do
     test_list =
@@ -16,5 +16,13 @@ defmodule AlgofunTest do
 
   test "Quick Sort", %{test_list: test_list} do
     assert QuickSort.sort(test_list) == Enum.sort(test_list)
+  end
+
+  test "Heap Sort", %{test_list: test_list} do
+    assert HeapSort.sort(test_list) == Enum.sort(test_list)
+  end
+
+  test "Insertion Sort", %{test_list: test_list} do
+    assert InsertionSort.sort(test_list) == Enum.sort(test_list)
   end
 end
